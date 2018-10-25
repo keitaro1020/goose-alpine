@@ -6,5 +6,6 @@ RUN set -ex \
             build-base \
             git \
         && go get -ldflags "-extldflags -static" bitbucket.org/liamstask/goose/cmd/goose \
-        && apk del build-dependencies
+        && apk del build-dependencies \
+        && apk add --no-cache mysql-client
 
